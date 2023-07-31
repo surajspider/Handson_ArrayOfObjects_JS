@@ -83,6 +83,128 @@
     <h2 class="answer inline">Output:</h2>
     <h2 class="code inline backcolor">241
     </h2>
-    <h2>Q5. </h2>
+    <hr>
+    <h2>Q5. This time we want to get only the names of the students who scored more than 
+        50 marks from the same dataset used above. 
+    </h2>
+    <h2 class="answer">Answer:</h2>
+    <h2 class="code"><pre>
+        let ans2 = studentRecords.filter((item) => item.marks > 50);
+        console.log(ans2.map((item) => item.name));
+    </pre>
+    </h2>
+    <h2 class="answer inline">Output:</h2>
+    <h2 class="inline backcolor">[ 'John', 'Wick' ]</h2>
+    <hr>
+    <h2>Q6. This time we are required to print the sum of marks of the students with id > 120.</h2>
+    <h2 class="answer">Answer:</h2>
+    <h2 class="code"><pre>
+        let sums = 0;
+        let ans6 = studentRecords.filter((item) => item.id > 120)
+            .map((item) => sums += item.marks);
+        console.log(ans6[ans6.length - 1]);
+    </pre>
+    </h2>
+    <h2 class="answer inline">Output:</h2>
+    <h2 class="inline backcolor">143</h2>
+    <hr>
+    <h2>Q7. This time we are required to print the total marks of the students with marks greater 
+        than 50 after a grace of 15 marks has been added to those students who scored 
+        less than 50.
+    </h2>
+    <h2 class="answer">Answer:</h2>
+    <h2 class="code"><pre>
+        let mark = 0;
+        let studentupdated = studentRecords.map((item) => {
+            if (item.marks < 50)
+                item.marks += 15;
+            return item;
+        })
+        console.log(studentupdated);
+        console.log(studentupdated.map((item) => item.marks > 50 ? mark += item.marks : null))
+        console.log(mark);</pre>
+    </h2>
+    <h2 class="answer inline">Output:</h2>
+    <h2 class="code inline backcolor"><pre>
+        [
+            { name: 'John', id: 123, marks: 98 },
+            { name: 'Baba', id: 101, marks: 38 },
+            { name: 'yaga', id: 200, marks: 60 },
+            { name: 'Wick', id: 115, marks: 75 }
+        ]       
+        [ 98, null, 158, 233 ]
+        233</pre>
+    </h2>
+    <hr>
+    <h2>Q8. Create 6 objects , each object will have name, class, roll no as 
+        properties. Store these objects in an array of objects. 
+    </h2>
+    <h2 class="answer">Answer:</h2>
+    <h2 class="code"><pre>
+        const student1 = {
+            name: "Abhi",
+            class: "10th",
+            rollNo: 101
+        };
+        
+        const student2 = {
+            name: "Guru",
+            class: "9th",
+            rollNo: 102
+        };
+        
+        const student3 = {
+            name: "Chandran",
+            class: "12th",
+            rollNo: 103
+        };
+        
+        const student4 = {
+            name: "Tamizharasan",
+            class: "11th",
+            rollNo: 104
+        };
+        
+        const student5 = {
+            name: "Tamil Mani",
+            class: "8th",
+            rollNo: 105
+        };
+        
+        const student6 = {
+            name: "Kumaravel",
+            class: "10th",
+            rollNo: 106
+        };
+        
+        let studentarray = [student1, student2, student3, student4, student5, student6];
+        studentarray.map((user) => {
+            console.log("Name:" + user.name);
+            console.log("Class:" + user.class);
+            console.log("Rollno.:" + user.rollNo);
+        })</pre>
+    </h2>
+    <h2 class="answer inline">Output:</h2>
+    <h2 class="code inline backcolor"><pre>
+        Name:Abhi
+        Class:10th
+        Rollno.:101
+        Name:Guru
+        Class:9th
+        Rollno.:102
+        Name:Chandran
+        Class:12th
+        Rollno.:103
+        Name:Tamizharasan
+        Class:11th
+        Rollno.:104
+        Name:Tamil Mani
+        Class:8th
+        Rollno.:105
+        Name:Kumaravel
+        Class:10th
+        Rollno.:106</pre>
+    </h2>
+    <hr>
 </body>
 </html>
